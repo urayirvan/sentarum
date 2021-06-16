@@ -13,6 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
+});*/
+
+//Login
+Route::get('/',[AuthController::class,'login'])->name('login');
+Route::post('/postlogin',[AuthController::class,'postlogin']);
+Route::get('/logout',[AuthController::class,'logout']);
+
+Route::middleware(['auth','checkrole:admin,atasan,staf'])->group(function(){    
+
+    //Halaman Dashboard
+    Route::get('/home',[DashboardController::class,'home']);
+
 });
