@@ -10,17 +10,17 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('/login')}}/img/favicon.png">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('/login')}}/css/bootstrap.min.css">
     <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="{{asset('/login')}}/css/fontawesome-all.min.css">
     <!-- Flaticon CSS -->
-    <link rel="stylesheet" href="font/flaticon.css">
+    <link rel="stylesheet" href="{{asset('/login')}}/font/flaticon.css">
     <!-- Google Web Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{asset('/login')}}/style.css">
 </head>
 
 <body>
@@ -30,7 +30,7 @@
     <section class="fxt-template-animation fxt-template-layout15">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6 col-12 fxt-bg-img" data-bg-image="img/figure/bg15-l.jpg">
+                <div class="col-md-6 col-12 fxt-bg-img" data-bg-image="{{asset('/login')}}/img/figure/sentarum.jpg">
                     <div class="fxt-intro">
                         <h1>Welcome To xmee</h1>
                         <p>Grursus mal suada faci lisis Lorem ipsum dolarorit more ametion consectetur elit. Vesti at bulum nec odio aea the dumm ipsumm ipsum that dolocons rsus mal suada.</p>
@@ -43,7 +43,7 @@
                 <div class="col-md-6 col-12 fxt-bg-color">
                     <div class="fxt-content">                        
                         <div class="fxt-header">
-                            <a href="login-15.html" class="fxt-logo"><img src="img/logo-15.png" alt="Logo"></a>                            
+                            <a href="login-15.html" class="fxt-logo"><img src="{{asset('/login')}}/img/logo-15.png" alt="Logo"></a>                            
                         </div>
                         <div class="fxt-form">
                             <h2>Log In</h2>     
@@ -96,17 +96,17 @@
         </div>
     </section>
     <!-- jquery-->
-    <script src="js/jquery-3.5.0.min.js"></script>
+    <script src="{{asset('/login')}}/js/jquery-3.5.0.min.js"></script>
     <!-- Popper js -->
-    <script src="js/popper.min.js"></script>
+    <script src="{{asset('/login')}}/js/popper.min.js"></script>
     <!-- Bootstrap js -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{asset('/login')}}/js/bootstrap.min.js"></script>
     <!-- Imagesloaded js -->
-    <script src="js/imagesloaded.pkgd.min.js"></script>    
+    <script src="{{asset('/login')}}/js/imagesloaded.pkgd.min.js"></script>    
     <!-- Validator js -->
-    <script src="js/validator.min.js"></script>
+    <script src="{{asset('/login')}}/js/validator.min.js"></script>
     <!-- Custom Js -->
-    <script src="js/main.js"></script>
+    <script src="{{asset('/login')}}/js/main.js"></script>
 
 </body>
 
