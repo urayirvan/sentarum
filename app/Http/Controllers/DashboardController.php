@@ -73,7 +73,7 @@ class DashboardController extends Controller
         $data = Tpm::find($id);
         $data->delete();
 
-        return redirect ('/mn1')->with('sukses','Sukses! Data berhasil di hapus');
+        return redirect ('/ls1')->with('sukses','Sukses! Data berhasil di hapus');
     }
 
     public function mn2()
