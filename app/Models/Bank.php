@@ -10,10 +10,10 @@ class Bank extends Model
     protected $dates = ['created_at, updated_at'];
 
     protected $table = 'bank';
-    protected $fillable = ['nama_bank'];
+    protected $fillable = ['id','nama_bank'];
 
     public function tpm()
     {
-        return $this->belongsTo('App\Tpm');
+        return $this->hasMany('App\Models\Tpm');
     }
 }

@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tpm extends Model
 {
-    protected $dates = ['created_at, updated_at'];
+    protected $dates = ['created_at, updated_at','tgl_lahir'];
 
     protected $table = 'tpm';
-    protected $fillable = ['nik','nama','tmp_lahir','tgl_lahir','alamat','id_bank','no_rekening','phone'];
+    protected $fillable = ['nik','nama','tmp_lahir','tgl_lahir','alamat','bank_id','no_rekening','phone'];
 
     public function bank()
     {
-        return $this->hasMany('App\Bank');
+        return $this->belongsTo('App\Models\Bank');
     }
 }

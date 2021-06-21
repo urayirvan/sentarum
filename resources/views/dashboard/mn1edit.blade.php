@@ -47,62 +47,67 @@
                             <!-- Basic Form Inputs card start -->
                             <div class="card">
                                 <div class="card-block">
-                                    <h4 class="sub-title">Input Data TPM </h4>
-                                    <form action="/mn1/create" method="POST" enctype="multipart/form-data">
+                                    <h4 class="sub-title">Edit Data TPM </h4>
+                                    <form action="/mn1/{{$data->id}}/update" method="POST" enctype="multipart/form-data">
                                         {{csrf_field()}}
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">NIK</label>
                                             <div class="col-sm-10">
-                                                <input type="text" name="nik" class="form-control" required>
+                                                <input type="text" name="nik" class="form-control" value="{{$data->nik}}">
                                             </div>                                            
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Nama</label>
                                             <div class="col-sm-10">
-                                                <input type="text" name="nama" class="form-control" required>
+                                                <input type="text" name="nama" class="form-control" value="{{$data->nama}}">
                                             </div>                                            
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Tempat Lahir</label>
                                             <div class="col-sm-10">
-                                                <input type="text" name="tmp_lahir" class="form-control" required>
+                                                <input type="text" name="tmp_lahir" class="form-control" value="{{$data->tmp_lahir}}">
                                             </div>                                            
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Tgl. Lahir</label>
                                             <div class="col-sm-10">
-                                                <input type="date" name="tgl_lahir" class="form-control">
+                                                <input type="date" name="tgl_lahir" class="form-control" value="@if(!empty($data->tgl_lahir)){{$data->tgl_lahir->format('Y-m-d')}}@endif">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Alamat</label>
                                             <div class="col-sm-10">
-                                                <input type="text" name="alamat" class="form-control" required>
+                                                <input type="text" name="alamat" class="form-control" value="{{$data->alamat}}">
                                             </div>                                            
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">No Handphone</label>
                                             <div class="col-sm-10">
-                                                <input type="text" name="phone" class="form-control" required>
+                                                <input type="text" name="phone" class="form-control" value="{{$data->phone}}">
                                             </div>                                            
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Nama Bank</label>
                                             <div class="col-sm-10">
-                                                <input type="text" name="id_bank" class="form-control" required>
-                                            </div>                                            
+                                                <select class="form-control" name="bank_id" >
+                                                    <option value="{{$data->bank_id}}">{{$data->bank->nama_bank}}</option>
+                                                    @foreach($bank as $bk)
+                                                    <option value="{{$bk->id}}">{{$bk->nama_bank}}</option>
+                                                    @endforeach
+                                                </select>                                 
+                                            </div>                                         
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">No Rekening Bank</label>
                                             <div class="col-sm-10">
-                                                <input type="text" name="no_rekening" class="form-control" required>
+                                                <input type="text" name="no_rekening" class="form-control" value="{{$data->no_rekening}}">
                                             </div>                                            
                                         </div>
                                         
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label"></label>
                                             <div class="col-sm-10">
-                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                                <button type="submit" class="btn btn-primary">Edit</button>
                                             </div>
                                         </div>
                                     </form>                                    

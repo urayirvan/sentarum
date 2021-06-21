@@ -30,14 +30,14 @@ class DashboardController extends Controller
 
     public function mn1create(Request $request)
     {
-        $data = new Kategori;
+        $data = new Tpm;
         $data->nik = $request->nik;
         $data->nama = $request->nama;
         $data->tmp_lahir = $request->tmp_lahir;
         $data->tgl_lahir = $request->tgl_lahir;
         $data->alamat = $request->alamat;
         $data->phone = $request->phone;
-        $data->id_bank = $request->id_bank;
+        $data->bank_id = $request->bank_id;
         $data->no_rekening = $request->no_rekening;
         $data->save();
 
@@ -46,9 +46,10 @@ class DashboardController extends Controller
 
     public function mn1edit($id)
     {
-        $detail = Tpm::find($id);
+        $data = Tpm::find($id);
+        $bank = Bank::all();
 
-        return view('dashboard.mn1edit',compact(['detail']));
+        return view('dashboard.mn1edit',compact(['data','bank']));
     }
 
     public function mn1update(Request $request,$id)
@@ -60,11 +61,11 @@ class DashboardController extends Controller
         $data->tgl_lahir = $request->tgl_lahir;
         $data->alamat = $request->alamat;
         $data->phone = $request->phone;
-        $data->id_bank = $request->id_bank;
+        $data->bank_id = $request->bank_id;
         $data->no_rekening = $request->no_rekening;
         $data->save();
 
-        return redirect ('/mn1')->with('sukses','Sukses! Data berhasil di edit');        
+        return redirect ('/ls1')->with('sukses','Sukses! Data berhasil di edit');        
     }
 
     public function mn1delete($id)

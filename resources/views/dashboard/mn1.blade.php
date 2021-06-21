@@ -89,7 +89,7 @@
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Nama Bank</label>
                                             <div class="col-sm-10">
-                                                <select class="form-control" name="id_bank" >
+                                                <select class="form-control" name="bank_id" >
                                                     <option value=""></option>
                                                     @foreach($bank as $bk)
                                                     <option value="{{$bk->id}}">{{$bk->nama_bank}}</option>
