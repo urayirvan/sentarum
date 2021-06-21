@@ -2,7 +2,7 @@
 <html lang="en">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
-    <title>Dashboard | SIJELITA</title>    
+    <title>Dashboard | SENTARUM</title>    
     <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -89,7 +89,7 @@
                             <i class="feather icon-menu"></i>
                         </a>
                         <a href="/dashboards">
-                            <img class="img-fluid" src="{{asset('/dashboard')}}/assets/images/logo-sijelita.png" alt="App-Logo" />
+                            <img class="img-fluid" src="{{asset('/dashboard')}}/assets/images/logo-sentarum.png" alt="App-Logo" />
                         </a>
                         <a class="mobile-options">
                             <i class="feather icon-more-horizontal"></i>
@@ -170,177 +170,25 @@
                                         <span class="pcoded-micon"><i class="feather icon-home"></i></span>
                                         <span class="pcoded-mtext">Beranda</span>
                                     </a>                                    
-                                </li>        
-                                <!--<li class="">
+                                </li>
+                                <li class="">
+                                    <a href="/ls1">
+                                        <span class="pcoded-micon"><i class="feather icon-edit"></i></span>
+                                        <span class="pcoded-mtext">Data TPM</span>
+                                    </a>
+                                </li>                            
+                                <li class="">
+                                    <a href="/mn2">
+                                        <span class="pcoded-micon"><i class="feather icon-clipboard"></i></span>
+                                        <span class="pcoded-mtext">Daftar Bank</span>
+                                    </a>
+                                </li>                            
+                                <li class="">
                                     <a href="/user">
                                         <span class="pcoded-micon"><i class="feather icon-users"></i></span>
                                         <span class="pcoded-mtext">Manajemen User</span>
                                     </a>
-                                </li> -->  
-                                <li class="pcoded-hasmenu">
-                                    <a href="javascript:void(0)">
-                                        <span class="pcoded-micon"><i class="feather icon-users"></i></span>
-                                        <span class="pcoded-mtext">Manajemen User</span>
-                                    </a>
-                                    <ul class="pcoded-submenu">
-                                        <li class=" ">
-                                            <a href="/user">
-                                                <span class="pcoded-mtext">Admin</span>
-                                            </a>
-                                        </li>
-                                        <!--<li class=" ">
-                                            <a href="/atasan">
-                                                <span class="pcoded-mtext">Atasan</span>
-                                            </a>
-                                        </li>  
-                                        <li class=" ">
-                                            <a href="/staf">
-                                                <span class="pcoded-mtext">Staf</span>
-                                            </a>
-                                        </li>-->
-                                        <li class=" ">
-                                            <a href="/staf">
-                                                <span class="pcoded-mtext">Karyawan</span>
-                                            </a>
-                                        </li>    
-
-                                    </ul>
-                                </li>                                
-                                @endif 
-                                @if(auth()->user()->role =='atasan') 
-                                <li class="active">
-                                    <a href="/home">
-                                        <span class="pcoded-micon"><i class="feather icon-home"></i></span>
-                                        <span class="pcoded-mtext">Beranda</span>
-                                    </a>                                    
-                                </li>  
-                                <li class="">
-                                    <a href="/at5">
-                                        <span class="pcoded-micon"><i class="feather icon-list"></i></span>
-                                        <span class="pcoded-mtext">Daftar Staf</span>
-                                    </a>                                    
-                                </li> 
-                                <li class="">
-                                    <a href="/st1">
-                                        <span class="pcoded-micon"><i class="feather icon-edit"></i></span>
-                                        <span class="pcoded-mtext">Rencana Kerja</span>
-                                    </a>
-                                </li> 
-                                <li class="">
-                                    <a href="/st2">
-                                        <span class="pcoded-micon"><i class="feather icon-eye"></i></span>
-                                        <span class="pcoded-mtext">Review Atasan</span>
-                                    </a>
-                                </li> 
-                                <li class="">
-                                    <a href="/st3">
-                                        <span class="pcoded-micon"><i class="feather icon-check-circle"></i></span>
-                                        <span class="pcoded-mtext">Realisasi Rencana Kerja</span>
-                                    </a>
-                                </li> 
-                                <li class="">
-                                    <a href="/st4">
-                                        <span class="pcoded-micon"><i class="feather icon-clock"></i></span>
-                                        <span class="pcoded-mtext">History Rencana Kerja</span>
-                                    </a>
-                                </li> 
-                                <li class="pcoded-hasmenu">
-                                    <a href="javascript:void(0)">
-                                        <span class="pcoded-micon"><i class="feather icon-users"></i></span>
-                                        <span class="pcoded-mtext" >Rencana Kerja Staf</span>
-                                    </a>
-                                    <ul class="pcoded-submenu">
-                                        <li class=" ">
-                                            <a href="/gr1">
-                                                <span class="pcoded-mtext">Review</span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="/gr2">
-                                                <span class="pcoded-mtext">Hasil Review</span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="/gr3">
-                                                <span class="pcoded-mtext">Realisasi</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="">
-                                    <a href="/at6">
-                                        <span class="pcoded-micon"><i class="feather icon-shield"></i></span>
-                                        <span class="pcoded-mtext">Izin Keluar Kantor Staf</span>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a target="_blank" href="http://sijelita.bwskal1.or.id/panduan/Panduan SIJELITA Atasan.pdf">
-                                        <span class="pcoded-micon"><i class="feather icon-book"></i></span>
-                                        <span class="pcoded-mtext">Panduan</span>
-                                    </a>                                     
-                                </li>
-                                
-                                @endif 
-                                @if(auth()->user()->role =='staf') 
-                                <li class="active">
-                                    <a href="/home">
-                                        <span class="pcoded-micon"><i class="feather icon-home"></i></span>
-                                        <span class="pcoded-mtext">Beranda</span>
-                                    </a>                                    
-                                </li>          
-                                <li class="">
-                                    <a href="/st1">
-                                        <span class="pcoded-micon"><i class="feather icon-edit"></i></span>
-                                        <span class="pcoded-mtext">Rencana Kerja</span>
-                                    </a>
-                                </li> 
-                                <li class="">
-                                    <a href="/st2">
-                                        <span class="pcoded-micon"><i class="feather icon-eye"></i></span>
-                                        <span class="pcoded-mtext">Review Atasan</span>
-                                    </a>
-                                </li> 
-                                <li class="">
-                                    <a href="/st3">
-                                        <span class="pcoded-micon"><i class="feather icon-check-circle"></i></span>
-                                        <span class="pcoded-mtext">Realisasi Rencana Kerja</span>
-                                    </a>
-                                </li> 
-                                <li class="">
-                                    <a href="/st4">
-                                        <span class="pcoded-micon"><i class="feather icon-clock"></i></span>
-                                        <span class="pcoded-mtext">History Rencana Kerja</span>
-                                    </a>
-                                </li> 
-                                <li class="pcoded-hasmenu">
-                                    <a href="javascript:void(0)">
-                                        <span class="pcoded-micon"><i class="feather icon-shield"></i></span>
-                                        <span class="pcoded-mtext">Izin Keluar Kantor</span>
-                                    </a>
-                                    <ul class="pcoded-submenu">
-                                        <li class=" ">
-                                            <a href="/st5">
-                                                <span class="pcoded-mtext">Ajukan Izin</span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="/st5/selesai">
-                                                <span class="pcoded-mtext">Selesai Izin</span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="/st5/history">
-                                                <span class="pcoded-mtext">History Izin</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="">
-                                    <a target="_blank" href="http://sijelita.bwskal1.or.id/panduan/Panduan SIJELITA Staf.pdf">
-                                        <span class="pcoded-micon"><i class="feather icon-book"></i></span>
-                                        <span class="pcoded-mtext">Panduan</span>
-                                    </a>
-                                </li> 
+                                </li>                            
                                 @endif 
                                 <li class="">
                                     <a href="/logout">
