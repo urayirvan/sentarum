@@ -23,7 +23,7 @@
                                     <li class="breadcrumb-item">
                                         <a href=""> <i class="feather icon-home"></i> </a>
                                     </li>
-                                    <li class="breadcrumb-item"><a href="#">Data TPM</a>
+                                    <li class="breadcrumb-item"><a href="#">Daftar Kecamatan</a>
                                     </li>
                                 </ul>
                             </div>
@@ -44,32 +44,48 @@
                                 {{session('sukses')}}
                             </div>
                             @endif
+                            <!-- Basic Form Inputs card start -->
+                            <div class="card">
+                                <div class="card-block">
+                                    <h4 class="sub-title">Input Kecamatan</h4>
+                                    <form action="/mn4/create" method="POST" enctype="multipart/form-data">
+                                        {{csrf_field()}}
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Nama Kecamatan</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="nama" class="form-control" required>
+                                            </div>                                            
+                                        </div>
+                                        
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label"></label>
+                                            <div class="col-sm-10">
+                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                            </div>
+                                        </div>
+                                    </form>                                    
+                                </div>
+                            </div>
+                            <!-- Basic Form Inputs card end -->
                             <!-- Zero config.table start -->
                             <div class="card">
-                                <div class="card-header">
-                                    <a href="/mn1"><button type="" class="btn btn-primary">&nbsp;Tambah Data TPM</button></a>
-                                </div>
                                 <div class="card-block">
                                     <div class="dt-responsive table-responsive">
                                         <table id="simpletable" class="table table-striped table-bordered nowrap">
                                             <thead>
                                             <tr>
-                                                <td>NIK</td>
-                                                <td>Nama</td>
-                                                <td>No Handphone</td>
+                                                <td>ID</td>
+                                                <td>Nama Kecamatan</td>
                                                 <td>Aksi</td>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             @foreach($detail as $data)
                                             <tr>
-                                                <td>{{$data->nik}}</td>
+                                                <td>{{$data->id}}</td>
                                                 <td>{{$data->nama}}</td>
-                                                <td>{{$data->phone}}</td>
                                                 <td>
-                                                    <a href="/mn1/{{$data->id}}/detail"><i class="fa fa-edit"></i></i>&nbsp;Detail</a>&nbsp;
-                                                    <a href="/mn1/{{$data->id}}/edit"><i class="fa fa-edit"></i></i>&nbsp;Edit</a>&nbsp;
-                                                    <a href="/mn1/{{$data->id}}/delete" onclick="return confirm('Apakah Anda yakin untuk menghapus data ?')"><i class="fa fa-trash"></i>&nbsp;Hapus</a>&nbsp;
+                                                    <a href="/mn4/{{$data->id}}/edit"><i class="fa fa-edit"></i></i>&nbsp;Edit</a>&nbsp;
                                                 </td>
                                             </tr>
                                             @endforeach

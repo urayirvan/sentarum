@@ -103,6 +103,39 @@
                                                 <input type="text" name="no_rekening" class="form-control" required>
                                             </div>                                            
                                         </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Desa Lokasi</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control" name="desa_id" >
+                                                    <option value=""></option>
+                                                    @foreach($desa as $ds)
+                                                    <option value="{{$ds->id}}">{{$ds->nama}}</option>
+                                                    @endforeach
+                                                </select>                                 
+                                            </div>                                         
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Kecamatan Lokasi</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control" name="kecamatan_id" >
+                                                    <option value=""></option>
+                                                    @foreach($kec as $kc)
+                                                    <option value="{{$kc->id}}">{{$kc->nama}}</option>
+                                                    @endforeach
+                                                </select>                                 
+                                            </div>                                         
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Kota/Kabupaten Lokasi</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control" name="kotakabupaten_id" >
+                                                    <option value=""></option>
+                                                    @foreach($kota as $kt)
+                                                    <option value="{{$kt->id}}">{{$kt->nama}}</option>
+                                                    @endforeach
+                                                </select>                                 
+                                            </div>                                         
+                                        </div>
                                         
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label"></label>

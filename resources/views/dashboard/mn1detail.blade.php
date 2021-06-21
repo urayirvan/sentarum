@@ -46,10 +46,12 @@
                             @endif
                             <!-- Basic Form Inputs card start -->
                             <div class="card">
+                                <div class="card-header">
+                                    <a href="/ls1"><button type="" class="btn btn-primary"><i class="icofont icofont-arrow-left"></i>Kembali</button></a>
+                                </div>
                                 <div class="card-block">
-                                    <h4 class="sub-title">Edit Data TPM </h4>
-                                    <form action="/mn1/{{$data->id}}/update" method="POST" enctype="multipart/form-data">
-                                        {{csrf_field()}}
+                                    <h4 class="sub-title">Detail Data TPM </h4>
+                                    <form action="" method="POST" enctype="multipart/form-data">
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">NIK</label>
                                             <div class="col-sm-10">
@@ -89,12 +91,7 @@
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Nama Bank</label>
                                             <div class="col-sm-10">
-                                                <select class="form-control" name="bank_id" >
-                                                    <option value="{{$data->bank_id}}">{{$data->bank->nama_bank}}</option>
-                                                    @foreach($bank as $bk)
-                                                    <option value="{{$bk->id}}">{{$bk->nama_bank}}</option>
-                                                    @endforeach
-                                                </select>                                 
+                                                <input type="text" name="bank_id" class="form-control" value="{{$data->bank->nama_bank}}">                                
                                             </div>                                         
                                         </div>
                                         <div class="form-group row">
@@ -106,42 +103,20 @@
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Desa Lokasi</label>
                                             <div class="col-sm-10">
-                                                <select class="form-control" name="desa_id" >
-                                                    <option value="{{$data->desa_id}}">{{$data->desa->nama}}</option>
-                                                    @foreach($desa as $ds)
-                                                    <option value="{{$ds->id}}">{{$ds->nama}}</option>
-                                                    @endforeach
-                                                </select>                                 
+                                                <input type="text" name="desa_id" class="form-control" value="{{$data->desa->nama}}">
                                             </div>                                         
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Kecamatan Lokasi</label>
                                             <div class="col-sm-10">
-                                                <select class="form-control" name="kecamatan_id" >
-                                                    <option value="{{$data->kecamatan_id}}">{{$data->kecamatan->nama}}</option>
-                                                    @foreach($kec as $kc)
-                                                    <option value="{{$kc->id}}">{{$kc->nama}}</option>
-                                                    @endforeach
-                                                </select>                                 
+                                                <input type="text" name="kecamatan_id" class="form-control" value="{{$data->kecamatan->nama}}">                                
                                             </div>                                         
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Kota/Kabupaten Lokasi</label>
                                             <div class="col-sm-10">
-                                                <select class="form-control" name="kotakabupaten_id" >
-                                                    <option value="{{$data->kotakabupaten_id}}">{{$data->kotakabupaten->nama}}</option>
-                                                    @foreach($kota as $kt)
-                                                    <option value="{{$kt->id}}">{{$kt->nama}}</option>
-                                                    @endforeach
-                                                </select>                                 
+                                                <input type="text" name="kotakabupaten_id" class="form-control" value="{{$data->kotakabupaten->nama}}">
                                             </div>                                         
-                                        </div>
-                                        
-                                        <div class="form-group row">
-                                            <label class="col-sm-2 col-form-label"></label>
-                                            <div class="col-sm-10">
-                                                <button type="submit" class="btn btn-primary">Edit</button>
-                                            </div>
                                         </div>
                                     </form>                                    
                                 </div>

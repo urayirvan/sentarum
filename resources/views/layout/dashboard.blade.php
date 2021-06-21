@@ -129,20 +129,6 @@
                                             </a>
                                         </li>
                                         @endif
-                                        @if(auth()->user()->role =='atasan')
-                                        <li>
-                                            <a href="/atasan/{{auth()->user()->id}}/profil">
-                                                <i class="feather icon-user"></i> Edit Profil
-                                            </a>
-                                        </li>
-                                        @endif 
-                                        @if(auth()->user()->role =='staf')
-                                        <li>
-                                            <a href="/staf/{{auth()->user()->id}}/profil">
-                                                <i class="feather icon-user"></i> Edit Profil
-                                            </a>
-                                        </li>
-                                        @endif  
                                         <li>
                                             <a href="/logout">
                                                 <i class="feather icon-log-out"></i> Keluar
@@ -182,7 +168,37 @@
                                         <span class="pcoded-micon"><i class="feather icon-clipboard"></i></span>
                                         <span class="pcoded-mtext">Daftar Bank</span>
                                     </a>
+                                </li>
+                                <li class="">
+                                    <a href="/mn3">
+                                        <span class="pcoded-micon"><i class="feather icon-list"></i></span>
+                                        <span class="pcoded-mtext">Daftar Desa</span>
+                                    </a>
                                 </li>                            
+                                <li class="">
+                                    <a href="/mn4">
+                                        <span class="pcoded-micon"><i class="feather icon-layers"></i></span>
+                                        <span class="pcoded-mtext">Daftar Kecamatan</span>
+                                    </a>
+                                </li>                            
+                                <li class="">
+                                    <a href="/mn5">
+                                        <span class="pcoded-micon"><i class="feather icon-slack"></i></span>
+                                        <span class="pcoded-mtext">Daftar Kota/Kabupaten</span>
+                                    </a>
+                                </li>   
+                                <li class="">
+                                    <a href="/mn6">
+                                        <span class="pcoded-micon"><i class="icofont icofont-file-pdf"></i></span>
+                                        <span class="pcoded-mtext">Export PDF</span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="/mn7">
+                                        <span class="pcoded-micon"><i class="icofont icofont-file-excel"></i></span>
+                                        <span class="pcoded-mtext">Export Excel</span>
+                                    </a>
+                                </li>                                                     
                                 <li class="">
                                     <a href="/user">
                                         <span class="pcoded-micon"><i class="feather icon-users"></i></span>

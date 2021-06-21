@@ -23,7 +23,7 @@
                                     <li class="breadcrumb-item">
                                         <a href=""> <i class="feather icon-home"></i> </a>
                                     </li>
-                                    <li class="breadcrumb-item"><a href="#">Data TPM</a>
+                                    <li class="breadcrumb-item"><a href="#">Export Excel</a>
                                     </li>
                                 </ul>
                             </div>
@@ -47,80 +47,16 @@
                             <!-- Basic Form Inputs card start -->
                             <div class="card">
                                 <div class="card-block">
-                                    <h4 class="sub-title">Edit Data TPM </h4>
-                                    <form action="/mn1/{{$data->id}}/update" method="POST" enctype="multipart/form-data">
+                                    <h4 class="sub-title">Export Custom 1</h4>
+                                    <form action="/mn7/custom1" method="POST" enctype="multipart/form-data">
                                         {{csrf_field()}}
-                                        <div class="form-group row">
-                                            <label class="col-sm-2 col-form-label">NIK</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" name="nik" class="form-control" value="{{$data->nik}}">
-                                            </div>                                            
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-sm-2 col-form-label">Nama</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" name="nama" class="form-control" value="{{$data->nama}}">
-                                            </div>                                            
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-sm-2 col-form-label">Tempat Lahir</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" name="tmp_lahir" class="form-control" value="{{$data->tmp_lahir}}">
-                                            </div>                                            
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-sm-2 col-form-label">Tgl. Lahir</label>
-                                            <div class="col-sm-10">
-                                                <input type="date" name="tgl_lahir" class="form-control" value="@if(!empty($data->tgl_lahir)){{$data->tgl_lahir->format('Y-m-d')}}@endif">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-sm-2 col-form-label">Alamat</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" name="alamat" class="form-control" value="{{$data->alamat}}">
-                                            </div>                                            
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-sm-2 col-form-label">No Handphone</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" name="phone" class="form-control" value="{{$data->phone}}">
-                                            </div>                                            
-                                        </div>
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Nama Bank</label>
                                             <div class="col-sm-10">
                                                 <select class="form-control" name="bank_id" >
-                                                    <option value="{{$data->bank_id}}">{{$data->bank->nama_bank}}</option>
+                                                    <option value=""></option>
                                                     @foreach($bank as $bk)
                                                     <option value="{{$bk->id}}">{{$bk->nama_bank}}</option>
-                                                    @endforeach
-                                                </select>                                 
-                                            </div>                                         
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-sm-2 col-form-label">No Rekening Bank</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" name="no_rekening" class="form-control" value="{{$data->no_rekening}}">
-                                            </div>                                            
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-sm-2 col-form-label">Desa Lokasi</label>
-                                            <div class="col-sm-10">
-                                                <select class="form-control" name="desa_id" >
-                                                    <option value="{{$data->desa_id}}">{{$data->desa->nama}}</option>
-                                                    @foreach($desa as $ds)
-                                                    <option value="{{$ds->id}}">{{$ds->nama}}</option>
-                                                    @endforeach
-                                                </select>                                 
-                                            </div>                                         
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-sm-2 col-form-label">Kecamatan Lokasi</label>
-                                            <div class="col-sm-10">
-                                                <select class="form-control" name="kecamatan_id" >
-                                                    <option value="{{$data->kecamatan_id}}">{{$data->kecamatan->nama}}</option>
-                                                    @foreach($kec as $kc)
-                                                    <option value="{{$kc->id}}">{{$kc->nama}}</option>
                                                     @endforeach
                                                 </select>                                 
                                             </div>                                         
@@ -129,7 +65,7 @@
                                             <label class="col-sm-2 col-form-label">Kota/Kabupaten Lokasi</label>
                                             <div class="col-sm-10">
                                                 <select class="form-control" name="kotakabupaten_id" >
-                                                    <option value="{{$data->kotakabupaten_id}}">{{$data->kotakabupaten->nama}}</option>
+                                                    <option value=""></option>
                                                     @foreach($kota as $kt)
                                                     <option value="{{$kt->id}}">{{$kt->nama}}</option>
                                                     @endforeach
@@ -140,13 +76,124 @@
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label"></label>
                                             <div class="col-sm-10">
-                                                <button type="submit" class="btn btn-primary">Edit</button>
+                                                <button type="submit" class="btn btn-primary">Export Data</button>
                                             </div>
                                         </div>
                                     </form>                                    
                                 </div>
                             </div>
-                            <!-- Basic Form Inputs card end -->          
+                            <!-- Basic Form Inputs card end -->
+                            <!-- Basic Form Inputs card start -->
+                            <div class="card">
+                                <div class="card-block">
+                                    <h4 class="sub-title">Export Custom 2</h4>
+                                    <form action="/mn7/custom2" method="POST" enctype="multipart/form-data">
+                                        {{csrf_field()}}
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Nama Bank</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control" name="bank_id" >
+                                                    <option value=""></option>
+                                                    @foreach($bank as $bk)
+                                                    <option value="{{$bk->id}}">{{$bk->nama_bank}}</option>
+                                                    @endforeach
+                                                </select>                                 
+                                            </div>                                         
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Kecamatan Lokasi</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control" name="kecamatan_id" >
+                                                    <option value=""></option>
+                                                    @foreach($kec as $kc)
+                                                    <option value="{{$kc->id}}">{{$kc->nama}}</option>
+                                                    @endforeach
+                                                </select>                                 
+                                            </div>                                         
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Kota/Kabupaten Lokasi</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control" name="kotakabupaten_id" >
+                                                    <option value=""></option>
+                                                    @foreach($kota as $kt)
+                                                    <option value="{{$kt->id}}">{{$kt->nama}}</option>
+                                                    @endforeach
+                                                </select>                                 
+                                            </div>                                         
+                                        </div>
+                                        
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label"></label>
+                                            <div class="col-sm-10">
+                                                <button type="submit" class="btn btn-primary">Export Data</button>
+                                            </div>
+                                        </div>
+                                    </form>                                    
+                                </div>
+                            </div>
+                            <!-- Basic Form Inputs card end -->
+                            <!-- Basic Form Inputs card start -->
+                            <div class="card">
+                                <div class="card-block">
+                                    <h4 class="sub-title">Export Custom 3</h4>
+                                    <form action="/mn7/custom3" method="POST" enctype="multipart/form-data">
+                                        {{csrf_field()}}
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Nama Bank</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control" name="bank_id" >
+                                                    <option value=""></option>
+                                                    @foreach($bank as $bk)
+                                                    <option value="{{$bk->id}}">{{$bk->nama_bank}}</option>
+                                                    @endforeach
+                                                </select>                                 
+                                            </div>                                         
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Desa Lokasi</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control" name="desa_id" >
+                                                    <option value=""></option>
+                                                    @foreach($desa as $ds)
+                                                    <option value="{{$ds->id}}">{{$ds->nama}}</option>
+                                                    @endforeach
+                                                </select>                                 
+                                            </div>                                         
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Kecamatan Lokasi</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control" name="kecamatan_id" >
+                                                    <option value=""></option>
+                                                    @foreach($kec as $kc)
+                                                    <option value="{{$kc->id}}">{{$kc->nama}}</option>
+                                                    @endforeach
+                                                </select>                                 
+                                            </div>                                         
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Kota/Kabupaten Lokasi</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control" name="kotakabupaten_id" >
+                                                    <option value=""></option>
+                                                    @foreach($kota as $kt)
+                                                    <option value="{{$kt->id}}">{{$kt->nama}}</option>
+                                                    @endforeach
+                                                </select>                                 
+                                            </div>                                         
+                                        </div>
+                                        
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label"></label>
+                                            <div class="col-sm-10">
+                                                <button type="submit" class="btn btn-primary">Export Data</button>
+                                            </div>
+                                        </div>
+                                    </form>                                    
+                                </div>
+                            </div>
+                            <!-- Basic Form Inputs card end -->
                         </div>
                         <!-- Input Grid card end -->                     
                     </div>
