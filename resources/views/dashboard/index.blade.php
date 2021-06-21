@@ -14,8 +14,8 @@
                                 <div class="card-block">
                                     <div class="row align-items-end">
                                         <div class="col-8">
-                                        <h4 class="text-white"></h4>
-                                            <h6 class="text-white m-b-0">Rencana Kerja</h6>
+                                        <h4 class="text-white">{{tpm()}}</h4>
+                                            <h6 class="text-white m-b-0">Orang</h6>
                                         </div>
                                         <div class="col-4 text-right">
                                             <canvas id="update-chart-1" height="50"></canvas>
@@ -23,7 +23,7 @@
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <p class="text-white m-b-0">Total Rencana Kerja</p>
+                                    <p class="text-white m-b-0">Total TPM</p>
                                 </div>
                             </div>
                         </div>
@@ -32,8 +32,8 @@
                                 <div class="card-block">
                                     <div class="row align-items-end">
                                         <div class="col-8">
-                                        <h4 class="text-white"></h4>
-                                            <h6 class="text-white m-b-0">Realisasi Rencana Kerja</h6>
+                                        <h4 class="text-white">{{desa()}}</h4>
+                                            <h6 class="text-white m-b-0">Desa</h6>
                                         </div>
                                         <div class="col-4 text-right">
                                             <canvas id="update-chart-2" height="50"></canvas>
@@ -41,7 +41,7 @@
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <p class="text-white m-b-0">Total Realisasi Rencana Kerja</p>
+                                    <p class="text-white m-b-0">Total Desa Lokasi</p>
                                 </div>
                             </div>
                         </div>
@@ -50,8 +50,8 @@
                                 <div class="card-block">
                                     <div class="row align-items-end">
                                         <div class="col-8">
-                                        <h4 class="text-white"></h4>
-                                            <h6 class="text-white m-b-0">Ditolak</h6>
+                                        <h4 class="text-white">{{kecamatan()}}</h4>
+                                            <h6 class="text-white m-b-0">Kecamatan</h6>
                                         </div>
                                         <div class="col-4 text-right">
                                             <canvas id="update-chart-3" height="50"></canvas>
@@ -59,7 +59,7 @@
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <p class="text-white m-b-0">Izin Keluar Kantor</p>
+                                    <p class="text-white m-b-0">Total Kecamatan Lokasi</p>
                                 </div>
                             </div>
                         </div>
@@ -68,8 +68,8 @@
                                 <div class="card-block">
                                     <div class="row align-items-end">
                                         <div class="col-8">
-                                        <h4 class="text-white"></h4>
-                                            <h6 class="text-white m-b-0">Diterima</h6>
+                                        <h4 class="text-white">{{kota()}}</h4>
+                                            <h6 class="text-white m-b-0">Kota/Kabupaten</h6>
                                         </div>
                                         <div class="col-4 text-right">
                                             <canvas id="update-chart-4" height="50"></canvas>
@@ -77,7 +77,7 @@
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <p class="text-white m-b-0">Izin Keluar Kantor</p>
+                                    <p class="text-white m-b-0">Total Kota/Kabupaten</p>
                                 </div>
                             </div>
                         </div>
@@ -115,28 +115,29 @@
         type: 'column'
     },
     title: {
-        text: 'Grafik Rencana Kerja dan Realisasi'
+        text: 'Grafik Rekening Bank TPM '
     },
     subtitle: {
         text: ''
     },
     xAxis: {
         categories: [
-            'Rencana Kerja',
-            'Realisasi Rencana Kerja',
+            'Bank Mandiri',
+            'Bank BNI',
+            'Bank BCA',
         ],
         crosshair: true
     },
     yAxis: {
         min: 0,
         title: {
-            text: 'Rencana Kerja'
+            text: 'Jumlah Rekening'
         }
     },
     tooltip: {
         headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
         pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-            '<td style="padding:0"><b>{point.y:.0f} Laporan</b></td></tr>',
+            '<td style="padding:0"><b>{point.y:.0f} Rekening</b></td></tr>',
         footerFormat: '</table>',
         shared: true,
         useHTML: true
@@ -149,7 +150,7 @@
     },
     series: [{
         name: 'Total',
-        data: [0,0]
+        data: [70,20,10]
 
     }]
 });
@@ -163,7 +164,7 @@
             type: 'pie'
         },
         title: {
-            text: 'Diagram Rencana Kerja dan Realisasi Rencana Kerja'
+            text: 'Diagram Sebaran Rekening Bank TPM'
         },
         subtitle: {
             text: ''
@@ -185,15 +186,19 @@
             name: 'Persen',
             colorByPoint: true,
             data: [{
-                name: 'Rencana Kerja',
-                y: 0,
+                name: 'Bank Mandiri',
+                y: 70,
                 sliced: true,
                 selected: true
-            }, {
-                name: 'Realisasi Rencana Kerja',
-                y: 0,
+            },  {
+                name: 'Bank BNI',
+                y: 20,
             
-            }]
+            }, {
+                name: 'Bank BCA',
+                y: 10,
+            
+            },]
         }]
     });
 </script>
