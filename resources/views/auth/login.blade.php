@@ -6,11 +6,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Xmee | Login and Register Form Html Templates</title>
+    <title>SENTARUM | BWSK I Pontianak</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('/login')}}/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('/login')}}/img/faviconpu.ico">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('/login')}}/css/bootstrap.min.css">
     <!-- Fontawesome CSS -->
@@ -32,23 +32,25 @@
             <div class="row">
                 <div class="col-md-6 col-12 fxt-bg-img" data-bg-image="{{asset('/login')}}/img/figure/sentarum.jpg">
                     <div class="fxt-intro">
-                        <h1>Welcome To xmee</h1>
-                        <p>Grursus mal suada faci lisis Lorem ipsum dolarorit more ametion consectetur elit. Vesti at bulum nec odio aea the dumm ipsumm ipsum that dolocons rsus mal suada.</p>
-                        <div class="fxt-page-switcher">
+                        <h1>Selamat Datang</h1>
+                        <p>Sentarum merupakan sistem informasi yang dikembangkan untuk membantu management data TPM P3-TGAI yang terinspirasi dari 
+                            nama danau rawa terluas di Asia Tenggara yang terletak di Kabupaten Kapuas Hulu Provinsi Kalimantan Barat. </p>
+                        <!--<div class="fxt-page-switcher">
                             <a href="login-15.html" class="switcher-text1 active">Log In</a>
                             <a href="register-15.html" class="switcher-text1">Register</a>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
                 <div class="col-md-6 col-12 fxt-bg-color">
                     <div class="fxt-content">                        
                         <div class="fxt-header">
-                            <a href="login-15.html" class="fxt-logo"><img src="{{asset('/login')}}/img/logo-15.png" alt="Logo"></a>                            
+                            <a href="#" class="fxt-logo"><img src="{{asset('/login')}}/img/logo-sentarum.png" alt="Logo"></a>                            
                         </div>
                         <div class="fxt-form">
-                            <h2>Log In</h2>     
-                            <p>Log in to continue in our website</p>
-                            <form method="POST">
+                            <h2>Login</h2>     
+                            <p>Silakan login untuk masuk ke aplikasi</p>
+                            <form action="/postlogin" method="POST">
+                                {{csrf_field()}}
                                 <div class="form-group">                                                
                                     <div class="fxt-transformY-50 fxt-transition-delay-1">                                                
                                         <input type="email" class="form-control" name="email" placeholder="Email Address" required="required">
@@ -64,8 +66,8 @@
                                 <div class="form-group">
                                     <div class="fxt-transformY-50 fxt-transition-delay-3">
                                         <div class="fxt-content-between">
-                                            <button type="submit" class="fxt-btn-fill">Log in</button>
-                                            <a href="forgot-password-15.html" class="switcher-text2">Forgot Password</a>
+                                            <button type="submit" class="fxt-btn-fill">Masuk</button>
+                                            <!--<a href="forgot-password-15.html" class="switcher-text2">Forgot Password</a>-->
                                         </div>
                                     </div>
                                 </div>
